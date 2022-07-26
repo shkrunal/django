@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>LOGIN</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form method="POST">
+        <h3>Login Here</h3>
+        {% csrf_token %}
+        <label for="username">Enter Email :</label>
+        <input type="email" placeholder="Email or Phone"  name="email">
+
+        <label for="password">Password :</label>
+        <input type="password" placeholder="Password" id="password" name="password">
+        <input type="submit" value="Login">
+        <div class="login-content">
+            <b>Don't have an account?<a href="{% url 'register' %}">Register </b></a>
+        </div>
+        <!-- {% if error %}
+            <script>
+                alert('{{ error }}')
+            </script>
+        {% endif %} -->
+        {{ error }}
+    </form>
+</body>
+</html>

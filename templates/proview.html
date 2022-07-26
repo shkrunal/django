@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{%load static %}
+
+{% block proview %}
+
+        
+        <section class="about container py-5">
+
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6 col-lg-6">
+                    <img  src="{{ g.img.url}}" alt="">
+                </div>
+                
+                <div class="col-12 col-md-6">
+                    <h1>{{ g.name }}</h1>
+                    <!-- <div>
+                        <a href="#" class="btn btn-primary">Buy Now</a>
+                        <a href="#" class="btn btn-primary">Add to cart</a>
+                    </div> -->
+                    <p>
+                        <h3>
+                       RS {{ g.offpri }}<br>
+                        {{ g.desc }}
+                        </h3>
+                    </p>
+                </div>
+            </div>
+            <!-- <div class = "product-btns">
+                <button type = "button" class = "btn-cart"> add to cart</button>
+                <button type = "button" class = "btn-buy"><a href=""> buy now</a> </button>
+            </div> -->
+        </section>
+
+
+        {% endblock %}   
+
+
+
+        
+       

@@ -1,0 +1,17 @@
+<html>
+    <body>
+
+
+        <h1>
+            hello
+            <a href="{% url 'logout' %}">Logout</a>
+        </h1>
+        {% for i in a %}
+        <img src="{{ i.img.url}}" style="width: 100px; height: 100px;">
+
+        <a href="{% url 'proview' i.id %}">{{ i.name }}</a><br>
+        {% endfor %}
+
+        {{ g }}
+    </body>
+</html>

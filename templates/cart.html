@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block cart %}
+    
+
+    <div class="container">
+        <h1>Shopping Cart</h1>
+        
+        <div class="cart">
+            
+            <div class="products1">
+                {% for i in cart %}
+                <div class="product1">
+                    <img src="{{i.product.img.url}}" alt="">
+                    <div class="product1-info">
+                        <h3 class="product1-name">{{i.product.desc}}</h3>
+                        <h4 class="product1-price">₹ {{i.price}}</h4>
+                        <!-- <h4 class="product1-offer">50%</h4> -->
+                       
+                        <!-- <input class="input-number" type="text" value="" min="0" max="10"> -->
+                        <a href="/minus/{{i.id}}" style="color:black;">-</a>
+                        <a class="product1-quantity"> <input value="{{i.qty}}" min="0" max="10"></a>
+                        <a href="/plus/{{i.id}}" style="color:black;">+</a>
+                        <p class="product1-remove">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                            <span class="remove"><a href="{% url 'delete' i.id %}" style="color:black;">Remove</a></span>
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <div class="cart-total">
+                <p>
+                    <span>Total Price</span>
+                    <span>₹ {{total}}</span>
+                </p>
+                
+                <!-- <p>
+                    <span>Number Of Items</span>
+                    <span>2</span>
+                </p>
+                <p>
+                    <span>You Saved</span>
+                    <span>₹ 100</span>
+                </p> -->
+                <a href="#">Proceed to checkout </a>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
+
+    

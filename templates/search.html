@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block women %}
+   
+
+    <!-- <div class="continer">
+        <h1>Data product</h1>
+        {% for p in pro %}
+            <li>
+                    <p>{{ p.name }} | {{ p.price }} | {{ p.desc }}</p>
+            </li>
+        {% endfor %}
+        <br><br><br><hr>
+
+    </div> -->
+
+
+    <div class = "products">
+        <div class = "container">
+            <h1 class = "lg-title">Your Result </h1>
+
+            <div class = "product-items">
+                <!-- single product -->
+                {% for i in pro %}
+                
+                <div class = "product">
+                   
+                    <div class = "product-content"> 
+                         <div class = "product-img">
+                            <img class="w-100" src="{{ i.img.url }}" alt="">
+                        </div> 
+                         <br>
+                        <br>
+                        <br>
+                        <br> 
+                         <div class = "product-btns">
+                            <button type = "button" class = "btn-cart"> add to cart
+                                
+                            </button>
+                            <button type = "button" class = "btn-buy"><a href=""> buy now
+                                
+                            </button>
+                        </div> 
+                     </div>
+                    
+                    <div class = "product-info">
+                        <div class = "product-info-top">
+                        </div>
+                        <a href = "" class = "product-name">{{ i.name}}</a>
+                        <p>{{i.desc}}</p>
+                        <p class = "product-price">Rs {{ i.price }}</p>
+                        <p class = "product-price"></p>
+                        
+                    </div>
+                    
+                    <div class = "off-info">
+                        <h2 class = "sm-title">15% off</h2>
+                    </div>
+                    
+                </div>
+                {%  endfor %}
+              
+
+            </div>
+        </div>
+    </div>
+
+
+
+    {% endblock %}

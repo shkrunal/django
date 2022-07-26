@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block home %}
+    <section class="categories">
+        <div class="container-fluid">
+            <div class="row1">
+                <div class="col-lg-6 p-0">
+                    <div class="categories_item categories_large_item">
+                        <img src="{% static 'image/category1.jpg' %}" alt="" class="img-fluid">
+                        <div class="categories_text">
+                            <h1>Women's fashion</h1>
+                            <p>15 items</p>
+                            <a href="{% url 'women' %}" >Buy now</a> 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-12 p-0">
+                            <div class="categories_item">
+                                <img src="{% static 'image/category2.jpg' %}" alt="" class="img-fluid">
+                                <div class="categories_text">
+                                    <h4>Men's fashion</h4>
+                                    <p>15 items</p>
+                                    <a href="{% url 'men' %}">Buy now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12 p-0">
+                            <div class="categories_item">
+                                <img src="{% static 'image/category3.jpg' %}" alt="" class="img-fluid">
+                                <div class="categories_text">
+                                    <h4>Body & Skin Care</h4>
+                                    <p>15 items</p>
+                                    <a href="{% url 'body' %}">Buy now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12 p-0">
+                            <div class="categories_item">
+                                <img src="{% static 'image/category-4.jpg' %}" alt="" class="img-fluid">
+                                <div class="categories_text">
+                                    <h4>Cosmetics</h4>
+                                    <p>15 items</p>
+                                    <a href="{% url 'cosmetics' %}">Buy now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12 p-0">
+                            <div class="categories_item">
+                                <img src="{% static 'image/category5.jpg' %}" alt="" class="img-fluid">
+                                <div class="categories_text">
+                                    <h4>Accessory</h4>
+                                    <p>15 items</p>
+                                    <a href="{% url 'accessory' %}">Buy now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="product spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="section-title">
+                        <h4>Offers And Discount Zone</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row property_gallery">
+                {%for i in hh%}
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product_item">
+                        <div class="product_item_pic">
+                            <!-- <img class="w-100" src="{% static 'image/product/F1.jpeg' %}" alt=""> -->
+                            <img class="w-100" src="{{ i.image.url }}" alt="">
+                            <div class="label new">New</div>
+                           
+                        </div>
+                        <div class="product_item_text">
+                             <div class = "product-btns">
+                                <!-- <a href="#" class="btn btn-primary">Add To Cart</a> -->
+                                <!-- <button type = "button" class = "btn-cart"> add to cart
+                                   
+                                </button>
+                                <button type = "button" class = "btn-buy"><a href=""> buy now
+                                </button>
+                                -->
+                            </div>
+                            <br>
+                            <h6><a href=""><b>{{i.name}}</b></a></h6>
+                            <div class="product_price">Rs {{i.offpri}} <span>Rs {{i.price}}</span> </div>
+                        </div>
+                    </div>
+                </div>
+               {%endfor%}
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="shop-method-area spad">
+        <div class="container">
+            <div class="row d-flex justify-content-between">
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="single-method mb-40">
+                        <i class="fa fa-shopping-bag"></i>
+                        <h6>Free Shipping Method</h6>
+                        <p>Free Shipping On Orders Above Rs.499.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="single-method mb-40">
+                        <i class="fa fa-phone"></i>
+                        <h6>Customer Care</h6>
+                        <p>Our calling customer services is available On Monday to Saturday from 10.00 a.m to 9.00 p.m. </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="single-method mb-40">
+                        <i class="fa fa-lock"></i>
+                        <h6>Secure Payment System</h6>
+                        <p>Mobile payment apps are designed to free you from cash and credit cards by allowing you to digitally transfer funds to family, friends, or merchants.</p>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </section>
+    
+   <!-- <div class="footer-container">
+       
+       <div class="footer">
+           <div class="footer-heading footer-1">
+               <h2> QUICK LINKS </h2>
+               <a href="{% url 'about' %}">About</a>
+               <a href="#">Service</a>
+               <a href="{% url 'contact' %}">Contact</a> 
+           </div>
+           <div class="footer-heading footer-2">
+                <h2>ACCOUNTS  </h2>
+                <a href="#">My Account</a>
+                <a href="#">Order Tracking</a>
+                <a href="#">Whishlist</a>
+
+            </div>
+            <div class="footer-heading footer-3">
+                <h2>SUPPORT </h2>
+                <a href="#">Terms And Conditions</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">24/7 Support</a>
+            </div>
+            <div class="footer-email-form">
+                <h2> JOIN OUR SITE</h2>
+                <input type="email"  placeholder="Enter your email address" id="footer-email">
+                <input type="submit" value="Sign Up" id="footer-email-btn">
+            </div>
+       </div>
+   </div> -->
+   
+   
+   {% endblock %}
+ 

@@ -1,0 +1,118 @@
+{% load static %}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="shortcut icon" href="image/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    
+</head>
+<body>
+    <header class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="header_logo">
+                        <a><span>Grace A Beauty Collection</span></a>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+                <div class="col-lg-12">
+                    <nav class="header_menu">
+                        <ul>
+                            <li><a href="{% url 'home' %}">Home</a></li>
+                            <!-- <li><a href="{% url 'women' %}">Women's</a></li>
+                            <li><a href="{% url 'men' %}">Men's</a></li> -->
+                            <li><a href="{% url 'product' %}">Product</a></li>
+                            
+                            <li><a href="{% url 'cart' %}"><i class="fa fa-shopping-cart" aria-hidden="true">Cart({{count}})</i></a></li>
+                            <li><a href="{% url 'about' %}">About us</a></li>
+                            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                            <li><a href="{% url 'feedback' %}">Feed Back</a></li>
+                            <!-- <li><a href="{% url 'Login' %}">Login</a></li> -->
+                            <li><a href="{% url 'logout' %}">Logout</a></li>
+                            <form class="form-inline ml-auto" method="GET">
+                                <div class="md-form my-0">
+                                  <input class="form-control" type="text" name="search" placeholder="Search" aria-label="Search">
+                                </div>
+                                <button class="btn btn-outline-white btn-md my-0 ml-sm-2" type="submit">Search</button>
+                            </form>
+                            <!-- <li>
+                                <div class="shopping-card">
+                                    <a href="{% url 'cart' %}"><i class="fa fa-shopping-cart" aria-hidden="true">{{count}}</i></a>
+                                </div>
+                            </li> -->
+                        </ul>
+                    </nav>
+                </div>
+                
+                
+            </div>
+        </div>
+    </header>
+    {% block home %}
+    {% endblock %}
+    {% block about %}
+    {% endblock %}
+    {% block accessory %}
+    {% endblock %}
+    {% block body&skin %}
+    {% endblock %}
+    {% block cart %}
+    {% endblock %}
+    {% block contact %}
+    {% endblock %}
+    {% block cosmetics %}
+    {% endblock %}
+    {% block feedback %}
+    {% endblock %}
+    {% block men %}
+    {% endblock %}
+    {% block product %}
+    {% endblock %}
+    {% block proview %}
+    {% endblock %}
+    {% block women %}
+    {% endblock %}
+    {% block search %}
+    {% endblock %}
+    
+
+    <div class="footer-container">
+       
+        <div class="footer">
+            <div class="footer-heading footer-1">
+                <h2> QUICK LINKS </h2>
+                <a href="{% url 'about' %}">About</a>
+                <a href="#">Service</a>
+                <a href="{% url 'contact' %}">Contact</a> 
+            </div>
+            <div class="footer-heading footer-2">
+                 <h2>ACCOUNTS  </h2>
+                 <a href="#">My Account</a>
+                 <a href="#">Order Tracking</a>
+                 <a href="#">Whishlist</a>
+ 
+             </div>
+             <div class="footer-heading footer-3">
+                 <h2>SUPPORT </h2>
+                 <a href="#">Terms And Conditions</a>
+                 <a href="#">Privacy Policy</a>
+                 <a href="#">24/7 Support</a>
+             </div>
+             <div class="footer-email-form">
+                 <h2> JOIN OUR SITE</h2>
+                 <input type="email"  placeholder="Enter your email address" id="footer-email">
+                 <input type="submit" value="Sign Up" id="footer-email-btn">
+             </div>
+        </div>
+    </div>
+ </body>
+</html>

@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block men %}
+   
+    <div class = "products">
+        <div class = "container">
+            <h1 class = "lg-title">Men's Specials</h1>
+
+            <div class = "product-items">
+                <!-- single product -->
+                {% for i in m%}
+                <div class = "product">
+                    <div class = "product-content">
+                        <div class = "product-img">
+                            <!-- <img src="{{ i.image.url }}"> -->
+                            <img class="w-100" src="{{ i.image.url }}" alt="">
+                        </div>
+                        <br>
+                        <br>
+                         
+                        <div class = "product-btns">
+                            <!-- <a href="#" class="btn btn-primary">Add To Cart</a> -->
+                            <!-- <button type = "button" class = "btn-cart"> add to cart
+                                
+                            </button>
+                            <button type = "button" class = "btn-buy"><a href=""> buy now
+                                
+                            </button> -->
+                        </div> 
+                     </div>
+                    
+                    <div class = "product-info">
+                        <div class = "product-info-top">
+                        </div>
+                        <a href = "" class = "product-name">{{ i.name}}</a>
+                        <!-- <p>{{i.desc}}</p> -->
+                        <p class = "product-price">Rs {{ i.price }}</p>
+                        <p class = "product-price">Rs {{ i.offpri }}</p>
+                        
+                    </div>
+                    
+                    <div class = "off-info">
+                        <h2 class = "sm-title">15% off</h2>
+                    </div>
+                    
+                </div>
+                {%  endfor %}
+            </div>
+        </div>
+    </div>
+    {% endblock %}
